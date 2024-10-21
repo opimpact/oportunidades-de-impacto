@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidades de Impacto</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 1000px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #ff9800;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .description {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #ffffff;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        table {
+            width: 100%;
+            max-width: 1000px;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #1e1e1e;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            overflow-x: auto;
+            display: block;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        th {
+            background-color: #333;
+            color: #ff9800;
+        }
+
+        td {
+            color: #e0e0e0;
+        }
+
+        a {
+            color: #ff9800;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .sortable:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para visualização em dispositivos móveis */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header img {
+                width: 60px;
+                height: 60px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            th, td {
+                font-size: 0.8rem;
+                padding: 6px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-family: Calibri, sans-serif;
+            font-size: 16px;
+            font-style: italic;
+            color: #e0e0e0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://pps.whatsapp.net/m1/v/t24/An9uFphRHxE6cMooFHtYw8gvSuKzBL7-7vyk9A5d8QiRDcbBZZ-aaiRe72PU9evdo7cgw50wtcmb3hew19RSMs_uWr_8NydsjDi78h4ALfASvld3Ae5N1yvNICZ_5CQ9vuJNyMJrnp9V20dP-TY?stp=dst-jpg&ccb=10-5&oh=01_Q5AaIIJAEXybRj5lzvIQeBy4zIJjzkaPdTLVryrHyrXbob3m&oe=6717BBB8&_nc_sid=5e03e0&_nc_cat=105" alt="Logo">
+        <h1>Oportunidades de Impacto</h1>
+        <p class="description">
+            O objetivo desta página é conectar empreendedores de negócios e iniciativas socioambientais às melhores oportunidades do mercado. Aqui, é possível encontrar editais, desafios, competições, concursos e chamadas que podem impulsionar startups, organizações da sociedade civil, ideias de negócios ou projetos de impacto socioambiental.
+        </p>
+    </div>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th class="sortable" onclick="sortTable(0)">Nome</th>
+                <th class="sortable" onclick="sortTable(1, 'date')">Data</th>
+                <th class="sortable" onclick="sortTable(2)">Público</th>
+                <th class="sortable" onclick="sortTable(3)">Local</th>
+                <th class="sortable" onclick="sortTable(4)">Site</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div class="footer">
+        Acesse o <a href="https://whatsapp.com/channel/0029VarXoC9J3jutUrsDIq2H" target="_blank">canal no WhatsApp</a> e fique por dentro das novidades!
+    </div>
+
+    <!-- Conexão com o script.js no diretório correto -->
+    <script src="js/script.js"></script>
+</body>
+</html>

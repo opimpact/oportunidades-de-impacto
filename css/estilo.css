@@ -1,0 +1,127 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #ff9800;
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.description {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1e1e1e;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    overflow-x: auto;
+    display: block;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+th {
+    background-color: #333;
+    color: #ff9800;
+    text-transform: uppercase;
+}
+
+td {
+    color: #e0e0e0;
+}
+
+a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.sortable:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para visualização em dispositivos móveis */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    th, td {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+.footer {
+    margin-top: 20px;
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #e0e0e0;
+    text-align: center;
+}
