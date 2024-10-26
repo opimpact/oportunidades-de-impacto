@@ -50,6 +50,12 @@
             line-height: 1.5;
         }
 
+        #row-counter {
+            font-size: 1.1rem;
+            color: #ff9800;
+            margin-top: 10px;
+        }
+
         table {
             width: 100%;
             max-width: 1000px;
@@ -91,7 +97,6 @@
             text-decoration: underline;
         }
 
-        /* Estilos para visualização em dispositivos móveis */
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -141,24 +146,79 @@
             O objetivo desta página é conectar empreendedores de negócios e iniciativas socioambientais às melhores oportunidades do mercado. Aqui, é possível encontrar editais, desafios, competições, concursos e chamadas que podem impulsionar startups, organizações da sociedade civil, ideias de negócios ou projetos de impacto socioambiental.
         </p>
     </div>
+
+    <!-- Contador de linhas da tabela -->
+    <p id="row-counter">Veja abaixo <span id="row-count">0</span> oportunidades!</p>
+
     <table id="data-table">
         <thead>
             <tr>
-                <th class="sortable" onclick="sortTable(0)">Nome</th>
+                <th class="sortable" onclick="sortTable(0, 'text')">Nome</th>
                 <th class="sortable" onclick="sortTable(1, 'date')">Inscrições Até</th>
-                <th class="sortable" onclick="sortTable(2)">Público</th>
-                <th class="sortable" onclick="sortTable(3)">Local</th>
-                <th class="sortable" onclick="sortTable(4)">Site</th>
+                <th class="sortable" onclick="sortTable(2, 'text')">Público</th>
+                <th class="sortable" onclick="sortTable(3, 'text')">Local</th>
+                <th class="sortable" onclick="sortTable(4, 'text')">Site</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+            <!-- Dados preenchidos dinamicamente do Google Sheets -->
+        </tbody>
     </table>
 
     <div class="footer">
         Acesse o <a href="https://whatsapp.com/channel/0029VarXoC9J3jutUrsDIq2H" target="_blank">canal no WhatsApp</a> e fique por dentro das novidades!
     </div>
 
-    <!-- Conexão com o script.js no diretório correto -->
+    <script>
+        // Função para atualizar o contador de linhas
+        function updateRowCount() {
+            const tbody = document.querySelector("#data-table tbody");
+            const rowCount = tbody.rows.length;
+            document.getElementById("row-count").textContent = rowCount;
+        }
+
+        // Função de ordenação para a tabela
+        function sortTable(columnIndex, type) {
+            const table = document.getElementById("data-table");
+            const tbody = table.tBodies[0];
+            const rows = Array.from(tbody.rows);
+            let direction = 1;
+
+            // Verificar se a tabela já está em ordem crescente ou decrescente
+            if (table.dataset.sortedColumn == columnIndex) {
+                direction = -1 * table.dataset.sortedDirection;
+            }
+            
+            table.dataset.sortedColumn = columnIndex;
+            table.dataset.sortedDirection = direction;
+
+            rows.sort((rowA, rowB) => {
+                const cellA = rowA.cells[columnIndex].textContent.trim();
+                const cellB = rowB.cells[columnIndex].textContent.trim();
+
+                if (type === 'date') {
+                    const dateA = new Date(cellA.split('/').reverse().join('-'));
+                    const dateB = new Date(cellB.split('/').reverse().join('-'));
+                    return direction * (dateA - dateB);
+                } else {
+                    return direction * cellA.localeCompare(cellB);
+                }
+            });
+
+            // Remover todas as linhas e adicionar na nova ordem
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
+        // Observar mudanças no tbody da tabela
+        const tbody = document.querySelector("#data-table tbody");
+        const observer = new MutationObserver(updateRowCount);
+
+        // Configuração do observer para observar quando linhas são adicionadas ou removidas
+        observer.observe(tbody, { childList: true });
+
+        // Chamar updateRowCount após carregar ou atualizar os dados da tabela
+        document.addEventListener("DOMContentLoaded", updateRowCount);
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
