@@ -1,10 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oportunidades de Impacto</title>
- 
+    <meta name="description" content="Descubra editais, competições e oportunidades exclusivas para transformar seus projetos de impacto socioambiental. Acesse já!">
+    <meta name="keywords" content="editais, competições, impacto socioambiental, negócios de impacto, startups, organizações da sociedade civil, apoio financeiro, mentorias, projetos sociais">
+    
+    <!-- Pré-conexão para otimizar o carregamento do Google Tag Manager -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <meta property="og:title" content="Oportunidades de Impacto">
+    <meta property="og:description" content="Descubra editais, competições e oportunidades exclusivas para transformar seus projetos de impacto socioambiental. Acesse já!">
+    <meta property="og:image" content="https://raw.githubusercontent.com/opimpact/oportunidades-de-impacto/master/opimp.jpg">
+    <meta property="og:url" content="https://opimpact.github.io/oportunidades-de-impacto/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+ <link rel="stylesheet" href="estilo.css">
+
 <style>
         body {
             background-color: #121212;
@@ -57,16 +71,24 @@
             margin-top: 10px;
         }
 
-        table {
-            width: 100%;
-            max-width: 1000px;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #1e1e1e;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            overflow-x: auto;
-            display: block;
-        }
+table {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #1e1e1e;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    overflow-x: auto;
+    display: block;
+}
+
+#data-table a {
+    white-space: nowrap; /* Evita quebra de linha */
+    overflow: hidden;    /* Esconde o texto que ultrapassa o limite */
+    text-overflow: ellipsis; /* Adiciona "..." no final do texto cortado */
+    display: inline-block; /* Garante que o estilo funcione corretamente */
+    max-width: 100px; /* Ajuste conforme necessário para limitar o tamanho */
+}
 
         th, td {
             border: 1px solid #333;
@@ -230,5 +252,69 @@
         document.addEventListener("DOMContentLoaded", updateRowCount);
     </script>
     <script src="js/script.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Concurso de Startups 2024",
+  "description": "Participe do Concurso de Startups para impulsionar seu projeto com mentoria e apoio financeiro.",
+  "startDate": "2024-12-01T08:00:00-03:00",
+  "endDate": "2024-12-15T18:00:00-03:00",
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "https://opimpact.github.io/oportunidades-de-impacto/"
+  },
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "image": "https://raw.githubusercontent.com/opimpact/oportunidades-de-impacto/master/opimp.jpg",
+  "organizer": {
+    "@type": "Organization",
+    "name": "Oportunidades de Impacto",
+    "url": "https://opimpact.github.io/oportunidades-de-impacto/"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock",
+    "url": "https://opimpact.github.io/oportunidades-de-impacto/"
+  }
+}
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new MutationObserver(() => {
+            const links = document.querySelectorAll("#data-table tbody a"); // Captura todos os links
+
+            links.forEach(link => {
+                if (link.textContent.trim() === "Visitar") { // Verifica se o texto atual é "Visitar"
+                    link.textContent = "Inscreva-se!"; // Define o texto fixo
+                }
+            });
+        });
+
+        // Observa mudanças no tbody da tabela (ex.: quando novos links são carregados)
+        const tbody = document.querySelector("#data-table tbody");
+        observer.observe(tbody, { childList: true });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Seleciona todos os links na tabela
+        const links = document.querySelectorAll("#data-table a");
+
+        links.forEach(link => {
+            // Verifica se o link é externo
+            if (link.hostname !== window.location.hostname) {
+                link.setAttribute("rel", "nofollow");
+                link.setAttribute("target", "_blank"); // Abre links externos em nova aba, opcional
+            }
+        });
+    });
+</script>
+
+
 </body>
 </html>
