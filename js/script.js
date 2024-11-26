@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyC2BsbtDR6FNB8kHSr0oZ88TLaeDBppOGM'; // Substitua pela sua API Key
+const API_KEY = 'AIzaSyBbm4hgJTqxbR16BEMKbAYsXsPnL-NxmxA'; // Substitua pela sua API Key
 const SHEET_ID = '1gmacUawKXMZ6YmhNf_aWh2AsmZ469xTJZzrkAsYJoTQ'; // ID da sua planilha
 const SHEET_NAME = 'abertas'; // Nome exato da aba
 
