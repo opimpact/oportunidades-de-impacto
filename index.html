@@ -7,10 +7,16 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+
+  // Configuração inicial
   gtag('js', new Date());
 
-  gtag('config', 'G-TLHZT0BFMQ');
-</script> 
+  // Desativar personalização de anúncios
+  gtag('config', 'G-TLHZT0BFMQ', {
+    'ads_data_redaction': true, // Remove dados de anúncios
+    'anonymize_ip': true // Anonimiza IP
+  });
+</script>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oportunidades de Impacto</title>
