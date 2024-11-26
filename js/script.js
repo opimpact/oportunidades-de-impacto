@@ -1,9 +1,9 @@
-const API_KEY = 'AIzaSyBbm4hgJTqxbR16BEMKbAYsXsPnL-NxmxA'; // Substitua pela sua API Key
 const SHEET_ID = '1gmacUawKXMZ6YmhNf_aWh2AsmZ469xTJZzrkAsYJoTQ'; // ID da sua planilha
 const SHEET_NAME = 'abertas'; // Nome exato da aba
 
-document.addEventListener('DOMContentLoaded', function () {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`;
+// Função para carregar dados da planilha
+function carregarDadosDaPlanilha(apiKey) {
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}?key=${apiKey}`;
 
     fetch(url)
         .then(response => {
@@ -42,4 +42,23 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
         .catch(error => console.error('Erro ao carregar dados:', error));
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Buscar a chave de API do servidor
+    fetch('https://seu-projeto.up.railway.app/proxy-key')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na API: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const API_KEY = data.apiKey;
+            console.log("Chave de API recebida:", API_KEY);
+
+            // Chamar a função para carregar dados da planilha
+            carregarDadosDaPlanilha(API_KEY);
+        })
+        .catch(error => console.error("Erro ao buscar a chave de API:", error));
 });
