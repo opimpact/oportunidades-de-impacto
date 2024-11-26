@@ -432,6 +432,23 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const banner = document.getElementById('cookie-banner');
+        const acceptButton = document.getElementById('accept-cookies');
+
+        // Verificar se o consentimento já foi dado
+        if (localStorage.getItem('cookies-accepted') === 'true') {
+            banner.style.display = 'none'; // Esconde o banner se o consentimento já foi dado
+        }
+
+        // Configurar o botão "Aceitar"
+        acceptButton.addEventListener('click', function () {
+            localStorage.setItem('cookies-accepted', 'true'); // Salva o consentimento no localStorage
+            banner.style.display = 'none'; // Esconde o banner
+        });
+    });
+</script>
 
 <br>
 <button id="back-to-top" onclick="scrollToTop()">Voltar ao topo</button>
