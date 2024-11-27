@@ -35,7 +35,7 @@ function carregarDadosDaPlanilha(apiKey) {
                     row.forEach((cell, index) => {
                         const newCell = newRow.insertCell(index);
 
-                        // Coluna de links
+                        // Coluna de links (Site)
                         if (index === 5) { // Ajusta para o índice correto do link
                             const link = document.createElement('a');
                             link.href = cell.startsWith('http') ? cell : `https://${cell}`;
@@ -55,21 +55,36 @@ function carregarDadosDaPlanilha(apiKey) {
         .catch(error => console.error('Erro ao carregar dados:', error));
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Buscar a chave de API do servidor
-    fetch('https://proxy-backend-production.up.railway.app/proxy-key')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Erro na API: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            const API_KEY = data.apiKey;
-            console.log("Chave de API recebida:", API_KEY);
+// Função para ordenar a tabela
+function sortTable(columnIndex, type) {
+    const table = document.getElementById("data-table");
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.rows);
+    let direction = 1;
 
-            // Chamar a função para carregar dados da planilha
-            carregarDadosDaPlanilha(API_KEY);
-        })
-        .catch(error => console.error("Erro ao buscar a chave de API:", error));
-});
+    // Verificar se a tabela já está em ordem crescente ou decrescente
+    if (table.dataset.sortedColumn == columnIndex) {
+        direction = -1 * table.dataset.sortedDirection;
+    }
+    table.dataset.sortedColumn = columnIndex;
+    table.dataset.sortedDirection = direction;
+
+    rows.sort((rowA, rowB) => {
+        const cellA = rowA.cells[columnIndex].textContent.trim();
+        const cellB = rowB.cells[columnIndex].textContent.trim();
+
+        if (type === "date") {
+            const dateA = new Date(cellA.split("/").reverse().join("-"));
+            const dateB = new Date(cellB.split("/").reverse().join("-"));
+            return direction * (dateA - dateB);
+        } else {
+            return direction * cellA.localeCompare(cellB);
+        }
+    });
+
+    // Atualiza a tabela com as linhas ordenadas
+    rows.forEach(row => tbody.appendChild(row));
+}
+
+// Chamar a função quando o documento estiver carregado
+document.addEventListener('DOMContentLoaded', carregarDadosDaPlanilha);
