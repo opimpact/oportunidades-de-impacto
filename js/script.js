@@ -46,7 +46,7 @@ function carregarDadosDaPlanilha(apiKey) {
 
 document.addEventListener('DOMContentLoaded', function () {
     // Buscar a chave de API do servidor
-    fetch('https://seu-projeto.up.railway.app/proxy-key')
+    fetch('https://proxy-backend-production.up.railway.app/proxy-key')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Erro na API: ${response.status}`);
