@@ -1,6 +1,3 @@
-const SHEET_ID = '1gmacUawKXMZ6YmhNf_aWh2AsmZ469xTJZzrkAsYJoTQ';
-const SHEET_NAME = 'Abertas';
-
 function carregarDadosDaPlanilha() {
     const url = 'https://proxy-backend-production.up.railway.app/proxy-key';
     
