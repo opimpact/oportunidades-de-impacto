@@ -250,20 +250,22 @@ table {
     <!-- Contador de linhas da tabela -->
     <p id="row-counter">Confira <span id="row-count">0</span> oportunidades!</p>
 
-    <table id="data-table">
-	        <thead>
-            <tr>
-                <th class="sortable" onclick="sortTable(0, 'text')">Nome</th>
-                <th class="sortable" onclick="sortTable(1, 'date')">Até</th>
-                <th class="sortable" onclick="sortTable(2, 'text')">Público</th>
-                <th class="sortable" onclick="sortTable(3, 'text')">Local</th>
-                <th class="sortable" onclick="sortTable(4, 'text')">Site</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Dados preenchidos dinamicamente do Google Sheets -->
-        </tbody>
-    </table>
+<table id="data-table">
+    <thead>
+        <tr>
+            <th class="sortable" onclick="sortTable(0, 'text')">ID</th>
+            <th class="sortable" onclick="sortTable(1, 'text')">Nome</th>
+            <th class="sortable" onclick="sortTable(2, 'date')">Data Limite</th>
+            <th class="sortable" onclick="sortTable(3, 'text')">Público</th>
+            <th class="sortable" onclick="sortTable(4, 'text')">Local</th>
+            <th class="sortable" onclick="sortTable(5, 'text')">Site</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- As linhas da tabela serão preenchidas dinamicamente -->
+    </tbody>
+</table>
+
 
     <div class="footer">
         Acesse o <a href="https://whatsapp.com/channel/0029VarXoC9J3jutUrsDIq2H" target="_blank">canal no WhatsApp</a> e fique por dentro das novidades! Em caso de dúvidas, <a href="https://bit.ly/ContatoOpImpact" target="_blank">fale conosco!</a> 
