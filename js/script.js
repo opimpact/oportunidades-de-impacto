@@ -32,18 +32,25 @@ function carregarDadosDaPlanilha(apiKey) {
                     const newRow = tableBody.insertRow();
                     row.forEach((cell, index) => {
                         const newCell = newRow.insertCell(index);
-                        if (index === 4) {
-                            // Se for a coluna de link, faça ela clicável com o texto "Visitar"
+
+                        // Adiciona os valores de forma correspondente às colunas:
+                        if (index === 0) {
+                            // Para a coluna ID
+                            newCell.textContent = cell; 
+                        } else if (index === 4) {
+                            // Para a coluna de links
                             const link = document.createElement('a');
                             link.href = cell.startsWith('http') ? cell : `https://${cell}`;
                             link.textContent = 'Visitar';
                             link.target = '_blank'; // Abre o link em uma nova aba
                             newCell.appendChild(link);
                         } else {
+                            // Para outras colunas
                             newCell.textContent = cell;
                         }
                     });
                 });
+
                 console.log("Tabela atualizada com sucesso!");
             } else {
                 console.error('Nenhum dado encontrado na planilha.');
