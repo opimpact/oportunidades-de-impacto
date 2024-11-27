@@ -1,5 +1,5 @@
 const SHEET_ID = '1gmacUawKXMZ6YmhNf_aWh2AsmZ469xTJZzrkAsYJoTQ'; // ID da sua planilha
-const SHEET_NAME = 'abertas'; // Nome exato da aba
+const SHEET_NAME = 'Abertas'; // Nome exato da aba
 
 // Função para carregar dados da planilha
 function carregarDadosDaPlanilha(apiKey) {
@@ -13,9 +13,16 @@ function carregarDadosDaPlanilha(apiKey) {
             return response.json();
         })
         .then(data => {
+            console.log("Dados da planilha recebidos:", data);
+
             if (data.values) {
                 const rows = data.values;
                 const tableBody = document.querySelector('#data-table tbody');
+
+                if (!tableBody) {
+                    console.error("Elemento da tabela não encontrado. Verifique o HTML.");
+                    return;
+                }
 
                 // Limpa a tabela antes de inserir novos dados
                 tableBody.innerHTML = '';
@@ -37,6 +44,7 @@ function carregarDadosDaPlanilha(apiKey) {
                         }
                     });
                 });
+                console.log("Tabela atualizada com sucesso!");
             } else {
                 console.error('Nenhum dado encontrado na planilha.');
             }
