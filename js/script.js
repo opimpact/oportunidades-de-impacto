@@ -30,27 +30,23 @@ function carregarDadosDaPlanilha(apiKey) {
                 // Adiciona cada linha da planilha na tabela
                 rows.slice(1).forEach(row => {
                     const newRow = tableBody.insertRow();
+
+                    // Adiciona cada célula da linha
                     row.forEach((cell, index) => {
                         const newCell = newRow.insertCell(index);
 
-                        // Adiciona os valores de forma correspondente às colunas:
-                        if (index === 0) {
-                            // Para a coluna ID
-                            newCell.textContent = cell; 
-                        } else if (index === 4) {
-                            // Para a coluna de links
+                        // Coluna de links
+                        if (index === 5) { // Ajusta para o índice correto do link
                             const link = document.createElement('a');
                             link.href = cell.startsWith('http') ? cell : `https://${cell}`;
                             link.textContent = 'Visitar';
                             link.target = '_blank'; // Abre o link em uma nova aba
                             newCell.appendChild(link);
                         } else {
-                            // Para outras colunas
                             newCell.textContent = cell;
                         }
                     });
                 });
-
                 console.log("Tabela atualizada com sucesso!");
             } else {
                 console.error('Nenhum dado encontrado na planilha.');
