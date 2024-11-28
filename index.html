@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TLHZT0BFMQ"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TLHZT0BFMQ" integrity="sha384-T8DrY0kjj4/siqMGpSXOMkVpEGh0vwLJrQQqNYCA+6/rHzZEjsG7v8qFVwVcuQGi" crossorigin="anonymous"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -34,7 +33,7 @@
     <meta property="og:locale" content="pt_BR">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
- <link rel="stylesheet" href="css/estilo.css">
+ <link rel="stylesheet" href="css/estilo.css" integrity="sha384-YourCssHashHere" crossorigin="anonymous">
 <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
@@ -43,10 +42,7 @@
   connect-src 'self' https://sheets.googleapis.com https://www.google-analytics.com https://analytics.google.com https://proxy-backend-production.up.railway.app;
   frame-src 'self' https://td.doubleclick.net;">
 
-
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-
 
 <style>
         body {
@@ -112,11 +108,11 @@ table {
 }
 
 #data-table a {
-    white-space: nowrap; /* Evita quebra de linha */
-    overflow: hidden;    /* Esconde o texto que ultrapassa o limite */
-    text-overflow: ellipsis; /* Adiciona "..." no final do texto cortado */
-    display: inline-block; /* Garante que o estilo funcione corretamente */
-    max-width: 100px; /* Ajuste conforme necessário para limitar o tamanho */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100px;
 }
         th, td {
             border: 1px solid #333;
@@ -199,8 +195,8 @@ table {
     font-size: 16px;
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    display: none; /* Esconde o botão inicialmente */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
+    display: none;
+    z-index: 1000;
 }
 
 #back-to-top:hover {
@@ -246,8 +242,6 @@ table {
     <input type="text" id="filter-input" placeholder="Digite palavras-chave ou categorias...">
 </div>
 
-
-    <!-- Contador de linhas da tabela -->
     <p id="row-counter">Confira <span id="row-count">0</span> oportunidades!</p>
 
 <table id="data-table">
@@ -262,31 +256,26 @@ table {
         </tr>
     </thead>
     <tbody>
-        <!-- As linhas da tabela serão preenchidas dinamicamente -->
     </tbody>
 </table>
-
 
     <div class="footer">
         Acesse o <a href="https://whatsapp.com/channel/0029VarXoC9J3jutUrsDIq2H" target="_blank">canal no WhatsApp</a> e fique por dentro das novidades! Em caso de dúvidas, <a href="https://bit.ly/ContatoOpImpact" target="_blank">fale conosco!</a> 
     </div>
 
     <script>
-        // Função para atualizar o contador de linhas
         function updateRowCount() {
             const tbody = document.querySelector("#data-table tbody");
             const rowCount = tbody.rows.length;
             document.getElementById("row-count").textContent = rowCount;
         }
 
-        // Função de ordenação para a tabela
         function sortTable(columnIndex, type) {
             const table = document.getElementById("data-table");
             const tbody = table.tBodies[0];
             const rows = Array.from(tbody.rows);
             let direction = 1;
 
-            // Verificar se a tabela já está em ordem crescente ou decrescente
             if (table.dataset.sortedColumn == columnIndex) {
                 direction = -1 * table.dataset.sortedDirection;
             }
@@ -307,21 +296,15 @@ table {
                 }
             });
 
-            // Remover todas as linhas e adicionar na nova ordem
             rows.forEach(row => tbody.appendChild(row));
         }
 
-        // Observar mudanças no tbody da tabela
         const tbody = document.querySelector("#data-table tbody");
         const observer = new MutationObserver(updateRowCount);
-
-        // Configuração do observer para observar quando linhas são adicionadas ou removidas
         observer.observe(tbody, { childList: true });
-
-        // Chamar updateRowCount após carregar ou atualizar os dados da tabela
         document.addEventListener("DOMContentLoaded", updateRowCount);
     </script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js" integrity="sha384-YourScriptHashHere" crossorigin="anonymous"></script>
 
 <script type="application/ld+json">
 {
@@ -355,16 +338,13 @@ table {
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const observer = new MutationObserver(() => {
-            const links = document.querySelectorAll("#data-table tbody a"); // Captura todos os links
-
+            const links = document.querySelectorAll("#data-table tbody a");
             links.forEach(link => {
-                if (link.textContent.trim() === "Visitar") { // Verifica se o texto atual é "Visitar"
-                    link.textContent = "Inscreva-se!"; // Define o texto fixo
+                if (link.textContent.trim() === "Visitar") {
+                    link.textContent = "Inscreva-se!";
                 }
             });
         });
-
-        // Observa mudanças no tbody da tabela (ex.: quando novos links são carregados)
         const tbody = document.querySelector("#data-table tbody");
         observer.observe(tbody, { childList: true });
     });
@@ -372,14 +352,11 @@ table {
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Seleciona todos os links na tabela
         const links = document.querySelectorAll("#data-table a");
-
         links.forEach(link => {
-            // Verifica se o link é externo
             if (link.hostname !== window.location.hostname) {
                 link.setAttribute("rel", "nofollow");
-                link.setAttribute("target", "_blank"); // Abre links externos em nova aba, opcional
+                link.setAttribute("target", "_blank");
             }
         });
     });
@@ -387,33 +364,27 @@ table {
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        // Observar mudanças no tbody da tabela
         const tbody = document.querySelector("#data-table tbody");
-
         const observer = new MutationObserver(() => {
-            const links = tbody.querySelectorAll('a[target="_blank"]'); // Seleciona todos os links no tbody
+            const links = tbody.querySelectorAll('a[target="_blank"]');
             links.forEach(link => {
                 link.setAttribute("rel", "noopener noreferrer");
             });
         });
-
-        // Configuração do observer para observar adição de linhas ou links
         observer.observe(tbody, { childList: true });
     });
 </script>
 <script>
-    // Função para rolar para o topo da página
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Mostrar ou esconder o botão dependendo do scroll
     window.addEventListener('scroll', () => {
         const backToTopButton = document.getElementById('back-to-top');
-        if (window.scrollY > 300) { // Mostra o botão se o scroll passar de 300px
+        if (window.scrollY > 300) {
             backToTopButton.style.display = 'block';
         } else {
-            backToTopButton.style.display = 'none';
+backToTopButton.style.display = 'none';
         }
     });
 </script>
@@ -425,14 +396,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     filterInput.addEventListener("input", () => {
         const filterText = filterInput.value.toLowerCase();
-
-        // Percorre todas as linhas da tabela
         Array.from(tbody.rows).forEach(row => {
             const rowText = Array.from(row.cells)
                 .map(cell => cell.textContent.toLowerCase())
-                .join(" "); // Junta todo o texto da linha
-
-            // Mostra ou esconde a linha com base na busca
+                .join(" ");
             row.style.display = rowText.includes(filterText) ? "" : "none";
         });
     });
@@ -444,15 +411,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const banner = document.getElementById('cookie-banner');
         const acceptButton = document.getElementById('accept-cookies');
 
-        // Verificar se o consentimento já foi dado
         if (localStorage.getItem('cookies-accepted') === 'true') {
-            banner.style.display = 'none'; // Esconde o banner se o consentimento já foi dado
+            banner.style.display = 'none';
         }
 
-        // Configurar o botão "Aceitar"
         acceptButton.addEventListener('click', function () {
-            localStorage.setItem('cookies-accepted', 'true'); // Salva o consentimento no localStorage
-            banner.style.display = 'none'; // Esconde o banner
+            localStorage.setItem('cookies-accepted', 'true');
+            banner.style.display = 'none';
         });
     });
 </script>
