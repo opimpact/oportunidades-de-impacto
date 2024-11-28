@@ -24,15 +24,19 @@
     <meta property="og:url" content="https://opimpact.github.io/oportunidades-de-impacto/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="
+    default-src 'none';
+    script-src 'self' https://www.googletagmanager.com/gtag/js 'sha384-T8DrY0kjj4/siqMGpSXOMkVpEGh0vwLJrQQqNYCA+6/rHzZEjsG7v8qFVwVcuQGi' 'sha384-RiZYyGJ5eVArBCxAHpYDqK5SCF/HQyy3j2PF/+HoiV2s8B6QMmQyGx1xYhh+9JqX';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' https://raw.githubusercontent.com data:;
+    connect-src 'self' https://sheets.googleapis.com https://www.google-analytics.com https://analytics.google.com https://proxy-backend-production.up.railway.app;
+    frame-src https://td.doubleclick.net;
+    font-src 'self';
+    manifest-src 'self';
+    base-uri 'none';
+    form-action 'none';
+    upgrade-insecure-requests;">
     <link rel="stylesheet" href="css/estilo.css" integrity="sha384-YourCssHashHere" crossorigin="anonymous">
-    <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
-      style-src 'self' 'unsafe-inline';
-      img-src 'self' data: https://raw.githubusercontent.com https://www.google.com.br;
-      connect-src 'self' https://sheets.googleapis.com https://www.google-analytics.com https://analytics.google.com https://proxy-backend-production.up.railway.app;
-      frame-src 'self' https://td.doubleclick.net;">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <style>
