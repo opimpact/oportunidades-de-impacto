@@ -33,24 +33,20 @@ function carregarDadosDaPlanilha() {
         })
         .catch(error => console.error('Erro ao carregar dados:', error));
 }
-
 function sortTable(columnIndex, type) {
     const table = document.getElementById("data-table");
     const tbody = table.tBodies[0];
     const rows = Array.from(tbody.rows);
     let direction = 1;
-
     if (table.dataset.sortedColumn == columnIndex) {
         direction = -1 * table.dataset.sortedDirection;
     }
     
     table.dataset.sortedColumn = columnIndex;
     table.dataset.sortedDirection = direction;
-
     rows.sort((rowA, rowB) => {
         const cellA = rowA.cells[columnIndex].textContent.trim();
         const cellB = rowB.cells[columnIndex].textContent.trim();
-
         if (type === "date") {
             const dateA = new Date(cellA.split("/").reverse().join("-"));
             const dateB = new Date(cellB.split("/").reverse().join("-"));
@@ -59,8 +55,6 @@ function sortTable(columnIndex, type) {
             return direction * cellA.localeCompare(cellB);
         }
     });
-
     rows.forEach(row => tbody.appendChild(row));
 }
-
 document.addEventListener('DOMContentLoaded', carregarDadosDaPlanilha);
