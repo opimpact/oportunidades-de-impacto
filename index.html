@@ -6,14 +6,10 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-
-  // Configuração inicial
   gtag('js', new Date());
-
-  // Desativar personalização de anúncios
   gtag('config', 'G-TLHZT0BFMQ', {
-    'ads_data_redaction': true, // Remove dados de anúncios
-    'anonymize_ip': true // Anonimiza IP
+    'ads_data_redaction': true,
+    'anonymize_ip': true
   });
 </script>
 <meta charset="UTF-8">
@@ -21,28 +17,23 @@
     <title>Oportunidades de Impacto</title>
     <meta name="description" content="Descubra editais, competições e oportunidades exclusivas para transformar seus projetos de impacto socioambiental. Acesse já!">
     <meta name="keywords" content="editais, competições, impacto socioambiental, negócios de impacto, startups, organizações da sociedade civil, apoio financeiro, mentorias, projetos sociais">
-    
-    <!-- Pré-conexão para otimizar o carregamento do Google Tag Manager -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
-
     <meta property="og:title" content="Oportunidades de Impacto">
     <meta property="og:description" content="Descubra editais, competições e oportunidades exclusivas para transformar seus projetos de impacto socioambiental. Acesse já!">
     <meta property="og:image" content="https://raw.githubusercontent.com/opimpact/oportunidades-de-impacto/master/opimp.jpg">
     <meta property="og:url" content="https://opimpact.github.io/oportunidades-de-impacto/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-
- <link rel="stylesheet" href="css/estilo.css" integrity="sha384-YourCssHashHere" crossorigin="anonymous">
-<meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
-  style-src 'self' 'unsafe-inline';
-  img-src 'self' data: https://raw.githubusercontent.com https://www.google.com.br;
-  connect-src 'self' https://sheets.googleapis.com https://www.google-analytics.com https://analytics.google.com https://proxy-backend-production.up.railway.app;
-  frame-src 'self' https://td.doubleclick.net;">
-
-<link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="css/estilo.css" integrity="sha384-YourCssHashHere" crossorigin="anonymous">
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https://raw.githubusercontent.com https://www.google.com.br;
+      connect-src 'self' https://sheets.googleapis.com https://www.google-analytics.com https://analytics.google.com https://proxy-backend-production.up.railway.app;
+      frame-src 'self' https://td.doubleclick.net;">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <style>
         body {
@@ -304,7 +295,7 @@ table {
         observer.observe(tbody, { childList: true });
         document.addEventListener("DOMContentLoaded", updateRowCount);
     </script>
-    <script src="js/script.js" integrity="sha384-YourScriptHashHere" crossorigin="anonymous"></script>
+    <script src="js/script.js" integrity="sha384-RiZYyGJ5eVArBCxAHpYDqK5SCF/HQyy3j2PF/+HoiV2s8B6QMmQyGx1xYhh+9JqX" crossorigin="anonymous"></script>
 
 <script type="application/ld+json">
 {
@@ -382,9 +373,10 @@ table {
     window.addEventListener('scroll', () => {
         const backToTopButton = document.getElementById('back-to-top');
         if (window.scrollY > 300) {
-            backToTopButton.style.display = 'block';
+            backToTopButton.style.display =
+backToTopButton.style.display = 'block';
         } else {
-backToTopButton.style.display = 'none';
+            backToTopButton.style.display = 'none';
         }
     });
 </script>
