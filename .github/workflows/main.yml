@@ -1,0 +1,31 @@
+name: Site Health Check
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Roda a cada 6 horas
+  workflow_dispatch:  # Permite rodar manualmente
+
+jobs:
+  health_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check site availability
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://opimpact.github.io/oportunidades-de-impacto/
+          follow-redirect: true
+          max-attempts: 3
+          retry-delay: 5s
+          retry-all: true
+
+      - name: Send notification if check fails
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🚨 Site Health Check Failed',
+              body: 'The site health check has failed. Please check https://opimpact.github.io/oportunidades-de-impacto/'
+            });
