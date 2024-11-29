@@ -9,7 +9,7 @@ jobs:
   health_check:
     runs-on: ubuntu-latest
     steps:
-      - name: Check site availability
+      - name: Check main site availability
         uses: jtalk/url-health-check-action@v3
         with:
           url: https://opimpact.github.io/oportunidades-de-impacto/
@@ -17,8 +17,28 @@ jobs:
           max-attempts: 3
           retry-delay: 5s
           retry-all: true
+          
+      - name: Check Google Sheets API availability
+        uses: jtalk/url-health-check-action@v3
+        with:
+          url: https://sheets.googleapis.com
+          follow-redirect: true
+          max-attempts: 3
+          
+      - name: Performance Check
+        id: perf_check
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const start = Date.now();
+            const response = await fetch('https://opimpact.github.io/oportunidades-de-impacto/');
+            const timeMs = Date.now() - start;
+            
+            if (timeMs > 3000) { // alerta se demorar mais de 3 segundos
+              throw new Error(`Site response time (${timeMs}ms) is too high`);
+            }
 
-      - name: Send notification if check fails
+      - name: Send notification if any check fails
         if: failure()
         uses: actions/github-script@v6
         with:
@@ -27,5 +47,12 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: '🚨 Site Health Check Failed',
-              body: 'The site health check has failed. Please check https://opimpact.github.io/oportunidades-de-impacto/'
+              body: `Health check failed at ${new Date().toISOString()}
+              
+              Please check:
+              1. Site availability
+              2. Google Sheets API connection
+              3. Performance issues
+              
+              Site URL: https://opimpact.github.io/oportunidades-de-impacto/`
             });
