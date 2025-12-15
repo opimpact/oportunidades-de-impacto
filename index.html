@@ -29,8 +29,8 @@
 
 <style>
         body {
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #42484D;
+            color: #DADADA;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
@@ -53,14 +53,14 @@
         }
 
         .header img {
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             margin-bottom: 10px;
         }
 
         h1 {
-            color: #ff9800;
+            color: #FF5050;
             font-size: 2rem;
             margin: 0;
         }
@@ -68,37 +68,38 @@
         .description {
             margin-top: 10px;
             font-size: 1rem;
-            color: #ffffff;
+            color: #FFFFFF;
             max-width: 800px;
             line-height: 1.5;
         }
 
         #row-counter {
             font-size: 1.1rem;
-            color: #ff9800;
+            color: #FF5050;
             margin-top: 10px;
         }
 
-table {
-    width: 100%;
-    max-width: 1000px;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #1e1e1e;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    overflow-x: auto;
-    display: block;
-}
+        table {
+            width: 100%;
+            max-width: 1200px;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #6D6E72;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            overflow-x: auto;
+            display: block;
+        }
 
-#data-table a {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-block;
-    max-width: 100px;
-}
+        #data-table a {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            max-width: 100px;
+        }
+
         th, td {
-            border: 1px solid #333;
+            border: 1px solid #42484D;
             padding: 8px;
             text-align: left;
             font-size: 0.9rem;
@@ -106,16 +107,16 @@ table {
         }
 
         th {
-            background-color: #333;
-            color: #ff9800;
+            background-color: #42484D;
+            color: #FF5050;
         }
 
         td {
-            color: #e0e0e0;
+            color: #FFFFFF;
         }
 
         a {
-            color: #ff9800;
+            color: #FF5050;
             text-decoration: none;
         }
 
@@ -163,50 +164,77 @@ table {
             font-family: Calibri, sans-serif;
             font-size: 16px;
             font-style: italic;
-            color: #e0e0e0;
+            color: #DADADA;
             text-align: center;
         }
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ff9800;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    display: none;
-    z-index: 1000;
-}
 
-#back-to-top:hover {
-    background-color: #e68a00;
-}
-.filter-container {
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: column;
-}
+        .footer a {
+            color: #FF5050;
+        }
 
-.filter-container input {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    outline: none;
-    margin-top: 10px;
-}
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #FF5050;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+        }
 
-.filter-container input::placeholder {
-    color: #888;
-}
+        #back-to-top:hover {
+            background-color: #E04545;
+        }
+
+        .filter-container {
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-container label {
+            color: #FFFFFF;
+        }
+
+        .filter-container input {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #6D6E72;
+            border-radius: 5px;
+            background-color: #6D6E72;
+            color: #FFFFFF;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        .filter-container input:focus {
+            border-color: #FF5050;
+        }
+
+        .filter-container input::placeholder {
+            color: #DADADA;
+        }
+
+        #cookie-banner {
+            background: #42484D !important;
+        }
+
+        #accept-cookies {
+            background: #FF5050 !important;
+            color: #FFFFFF !important;
+        }
+
+        #accept-cookies:hover {
+            background: #E04545 !important;
+        }
 
     </style>
 <script defer data-domain="opimpact.github.io" src="https://plausible.io/js/script.js"></script>
@@ -215,10 +243,10 @@ table {
 </head>
 <body>
     <div class="header">
-        <img src="https://raw.githubusercontent.com/opimpact/oportunidades-de-impacto/master/opimp.jpg" alt="Logotipo do site Oportunidades de Impacto" title="Bem-vindo ao Oportunidades de Impacto">
+        <img src="https://raw.githubusercontent.com/opimpact/oportunidades-de-impacto/master/opimp.jpg" alt="Logotipo Oportunidades de Impacto - Neurônio" title="Bem-vindo ao Oportunidades de Impacto">
         <h1>Oportunidades de Impacto</h1>
         <p class="description">
-            O objetivo desta página é conectar empreendedores de negócios e iniciativas socioambientais às melhores oportunidades do mercado. Aqui, é possível encontrar editais, desafios, competições, concursos e chamadas que podem impulsionar startups, organizações da sociedade civil, ideias de negócios ou projetos de impacto socioambiental.
+            O objetivo desta página é conectar empreendedores de negócios e iniciativas socioambientais a oportunidades de acessar recursos financeiros e reconhecimento. Aqui, é possível encontrar editais, desafios, competições, concursos e chamadas que podem impulsionar startups, organizações da sociedade civil, ideias de negócios ou projetos de impacto socioambiental.
         </p>
     </div>
 
@@ -238,6 +266,7 @@ table {
             <th class="sortable" onclick="sortTable(3, 'text')">Público</th>
             <th class="sortable" onclick="sortTable(4, 'text')">Local</th>
             <th class="sortable" onclick="sortTable(5, 'text')">Site</th>
+            <th class="sortable" onclick="sortTable(6, 'text')">Observações</th>
         </tr>
     </thead>
     <tbody>
@@ -370,8 +399,7 @@ Oportunidades de Impacto! Powered by <a href="http://www.neuronio.com.br" target
     window.addEventListener('scroll', () => {
         const backToTopButton = document.getElementById('back-to-top');
         if (window.scrollY > 300) {
-            backToTopButton.style.display =
-backToTopButton.style.display = 'block';
+            backToTopButton.style.display = 'block';
         } else {
             backToTopButton.style.display = 'none';
         }
@@ -413,9 +441,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <br>
 <button id="back-to-top" onclick="scrollToTop()">Voltar ao topo</button>
-<div id="cookie-banner" style="display: flex; position: fixed; bottom: 0; width: 100%; background: #222; color: #fff; padding: 10px; justify-content: space-between; align-items: center; z-index: 9999;">
+<div id="cookie-banner" style="display: flex; position: fixed; bottom: 0; width: 100%; background: #42484D; color: #FFFFFF; padding: 10px; justify-content: space-between; align-items: center; z-index: 9999;">
     <p>Este site utiliza cookies para melhorar sua experiência.</p>
-    <button id="accept-cookies" style="background: #ffa500; color: #222; border: none; padding: 5px 10px; cursor: pointer;">Aceitar</button>
+    <button id="accept-cookies" style="background: #FF5050; color: #FFFFFF; border: none; padding: 5px 10px; cursor: pointer;">Aceitar</button>
 </div>
 </body>
 </html>
