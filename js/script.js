@@ -16,7 +16,7 @@ function carregarDadosDaPlanilha() {
                 tableBody.innerHTML = '';
                 rows.slice(1).forEach(row => {
                     const newRow = tableBody.insertRow();
-                    row.forEach((cell, index) => {
+                    row.slice(0, 7).forEach((cell, index) => {
                         const newCell = newRow.insertCell(index);
                         if (index === 5) {
                             const link = document.createElement('a');
