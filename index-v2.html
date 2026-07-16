@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oportunidades de Impacto</title>
+<meta name="description" content="Descubra editais, competições e oportunidades exclusivas para transformar suas ideias, startups ou projetos de impacto socioambiental. Acesse já!">
+<meta name="keywords" content="editais, competições, impacto socioambiental, negócios de impacto, startups, organizações da sociedade civil, apoio financeiro, mentorias, projetos sociais">
+<meta property="og:title" content="Oportunidades de Impacto">
+<meta property="og:description" content="Descubra editais, competições e oportunidades exclusivas para transformar seus projetos de impacto socioambiental. Acesse já!">
+<meta property="og:image" content="https://raw.githubusercontent.com/opimpact/oportunidades-de-impacto/master/opimp.jpg">
+<meta property="og:url" content="https://oportunidadesdeimpacto.com.br">
+<meta property="og:type" content="website">
+<meta http-equiv="Content-Security-Policy" content="
+   default-src 'none';
+   script-src 'self' https://plausible.io https://apis.google.com 'unsafe-inline' https://sheets.googleapis.com https://*.google.com;
+   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+   img-src 'self' https://raw.githubusercontent.com data:;
+   connect-src 'self' https://sheets.googleapis.com https://proxy-backend-production.up.railway.app https://plausible.io;
+   frame-src https://td.doubleclick.net;
+   font-src 'self' https://fonts.gstatic.com;
+   manifest-src 'self';
+   base-uri 'none';
+   form-action 'none';
+   upgrade-insecure-requests;">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script defer data-domain="oportunidadesdeimpacto.com.br" src="https://plausible.io/js/script.js"></script>
+<script defer data-domain="oportunidadesdeimpacto.com.br" src="https://plausible.io/js/script.outbound-links.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #FFFFFF;
+    color: #1A1A1A;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── HEADER ── */
+.site-header {
+    padding: 32px 0 24px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.header-text h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #42484D;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.header-text p {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin: 4px 0 0;
+}
+
+.header-cta {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.btn-rede {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FF5050;
+    color: #FFF;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s;
+}
+
+.btn-rede:hover { background: #E04545; }
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFF;
+    color: #42484D;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.15s;
+}
+
+.btn-whatsapp:hover { border-color: #FF5050; color: #FF5050; }
+
+/* ── BUSCA + FILTROS ── */
+.search-section {
+    padding: 24px 0 0;
+}
+
+.search-bar {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 16px 12px 44px;
+    font-size: 0.9375rem;
+    font-family: inherit;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    background: #FAFAFA;
+    color: #1A1A1A;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.search-bar input:focus {
+    border-color: #FF5050;
+    background: #FFF;
+}
+
+.search-bar input::placeholder { color: #9CA3AF; }
+
+.search-bar svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9CA3AF;
+    pointer-events: none;
+}
+
+.filters-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.tag-filter {
+    padding: 6px 14px;
+    font-size: 0.8125rem;
+    font-family: inherit;
+    font-weight: 500;
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
+    background: #FFF;
+    color: #42484D;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+
+.tag-filter:hover {
+    border-color: #FF5050;
+    color: #FF5050;
+}
+
+.tag-filter.active {
+    background: #FF5050;
+    color: #FFF;
+    border-color: #FF5050;
+}
+
+.sort-control {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8125rem;
+    color: #6B7280;
+}
+
+.sort-control select {
+    font-family: inherit;
+    font-size: 0.8125rem;
+    padding: 4px 8px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    background: #FFF;
+    color: #42484D;
+    cursor: pointer;
+    outline: none;
+}
+
+.counter-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0 20px;
+}
+
+.counter-text {
+    font-size: 0.875rem;
+    color: #6B7280;
+}
+
+.counter-text span {
+    font-weight: 600;
+    color: #FF5050;
+}
+
+/* ── DESTAQUES ── */
+.featured-section {
+    padding: 0 0 24px;
+    display: none;
+}
+
+.featured-section.visible { display: block; }
+
+.featured-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #FF5050;
+    margin-bottom: 12px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.card-featured {
+    border: 1px solid #E5E7EB;
+    border-top: 3px solid #FF5050;
+    border-radius: 10px;
+    padding: 20px;
+    background: #FFFAFA;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(255,80,80,0.08);
+}
+
+.card-featured .card-tag {
+    background: #FF5050;
+    color: #FFF;
+}
+
+/* ── BANNER ── */
+.banner-section {
+    margin-bottom: 24px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+
+.banner-section.visible { display: block; }
+
+.banner-section a { display: block; }
+
+.banner-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ── GRID DE CARDS ── */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    padding-bottom: 32px;
+}
+
+.card {
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 20px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    gap: 8px;
+}
+
+.card-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    border-radius: 20px;
+    background: #F3F4F6;
+    color: #42484D;
+    white-space: nowrap;
+}
+
+.card-date {
+    font-size: 0.8125rem;
+    color: #6B7280;
+    white-space: nowrap;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 2px;
+    line-height: 1.3;
+}
+
+.card-realizador {
+    font-size: 0.8125rem;
+    color: #6B7280;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 0.875rem;
+    color: #42484D;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 0.8125rem;
+    color: #6B7280;
+}
+
+.card-meta-item {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.card-meta-label {
+    color: #9CA3AF;
+}
+
+.card-benefit {
+    font-size: 0.8125rem;
+    color: #42484D;
+    background: #F9FAFB;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+
+.card-benefit-label {
+    font-weight: 600;
+    color: #6B7280;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+}
+
+.card-actions {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #F3F4F6;
+}
+
+.btn-inscricao {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 16px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: #FF5050;
+    color: #FFF;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-inscricao:hover { background: #E04545; }
+
+/* ── FOOTER ── */
+.site-footer {
+    border-top: 1px solid #E8E8E8;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 0.8125rem;
+    color: #6B7280;
+    line-height: 1.8;
+}
+
+.site-footer a {
+    color: #FF5050;
+    text-decoration: none;
+}
+
+.site-footer a:hover { text-decoration: underline; }
+
+.footer-brand {
+    margin-top: 8px;
+    color: #9CA3AF;
+}
+
+/* ── BACK TO TOP ── */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FF5050;
+    color: #FFF;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 1000;
+    transition: background 0.15s;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top:hover { background: #E04545; }
+
+/* ── COOKIE BANNER ── */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #42484D;
+    color: #FFF;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    font-size: 0.8125rem;
+}
+
+.cookie-banner button {
+    background: #FF5050;
+    color: #FFF;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8125rem;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+.cookie-banner button:hover { background: #E04545; }
+
+/* ── EMPTY STATE ── */
+.empty-state {
+    text-align: center;
+    padding: 48px 20px;
+    color: #9CA3AF;
+    font-size: 0.9375rem;
+    display: none;
+}
+
+.empty-state.visible { display: block; }
+
+/* ── LOADING ── */
+.loading {
+    text-align: center;
+    padding: 48px 20px;
+    color: #9CA3AF;
+    font-size: 0.9375rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-wrap: wrap;
+    }
+    .header-cta {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 12px;
+    }
+    .btn-rede, .btn-whatsapp {
+        flex: 1;
+        justify-content: center;
+    }
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    .sort-control {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 4px;
+    }
+    .filters-row {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .filters-row::-webkit-scrollbar { display: none; }
+}
+
+@media (max-width: 400px) {
+    .header-text h1 { font-size: 1.25rem; }
+    .card { padding: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container">
+        <div class="header-inner">
+            <img src="https://raw.githubusercontent.com/opimpact/oportunidades-de-impacto/master/opimp.jpg" alt="Oportunidades de Impacto" class="header-logo">
+            <div class="header-text">
+                <h1>Oportunidades de Impacto</h1>
+                <p>Conectando empreendedores e iniciativas socioambientais a editais, prêmios, aceleradoras e oportunidades de recursos e reconhecimento</p>
+            </div>
+            <div class="header-cta">
+                <a href="https://form.jotform.com/n3uronio/Rede_Neuronio" target="_blank" rel="noopener noreferrer" class="btn-rede">📩 Faça parte da rede</a>
+                <a href="https://whatsapp.com/channel/0029VarXoC9J3jutUrsDIq2H" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">Canal no WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- BUSCA + FILTROS -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-bar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="search-input" placeholder="Buscar por edital, tema, cidade...">
+        </div>
+        <div class="filters-row">
+            <button class="tag-filter active" data-category="todos">Todos</button>
+            <div class="sort-control">
+                <label for="sort-select">Ordenar por:</label>
+                <select id="sort-select">
+                    <option value="date-asc">Data limite (mais próxima)</option>
+                    <option value="date-desc">Data limite (mais distante)</option>
+                    <option value="name-asc">Nome (A–Z)</option>
+                    <option value="name-desc">Nome (Z–A)</option>
+                </select>
+            </div>
+        </div>
+        <div class="counter-row">
+            <p class="counter-text">Exibindo <span id="visible-count">0</span> de <span id="total-count">0</span> oportunidades</p>
+        </div>
+    </div>
+</section>
+
+<!-- DESTAQUES -->
+<section class="featured-section" id="featured-section">
+    <div class="container">
+        <p class="featured-label">✦ Em destaque</p>
+        <div class="featured-grid" id="featured-grid"></div>
+    </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner-section" id="banner-section">
+    <div class="container">
+        <div id="banner-container"></div>
+    </div>
+</section>
+
+<!-- GRID PRINCIPAL -->
+<main>
+    <div class="container">
+        <div class="loading" id="loading">Carregando oportunidades...</div>
+        <div class="empty-state" id="empty-state">Nenhuma oportunidade encontrada com esse filtro.</div>
+        <div class="cards-grid" id="cards-grid"></div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <p>As oportunidades divulgadas são de responsabilidade exclusiva de seus realizadores.</p>
+        <p>
+            <a href="https://form.jotform.com/n3uronio/Rede_Neuronio" target="_blank" rel="noopener noreferrer">Faça parte da rede</a> · 
+            <a href="https://whatsapp.com/channel/0029VarXoC9J3jutUrsDIq2H" target="_blank" rel="noopener noreferrer">Canal no WhatsApp</a> · 
+            <a href="https://www.neuronio.com.br/contato" target="_blank" rel="noopener noreferrer">Fale conosco</a>
+        </p>
+        <p class="footer-brand">Oportunidades de Impacto · Powered by <a href="https://www.neuronio.com.br" target="_blank" rel="noopener noreferrer">Neurônio</a></p>
+    </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">↑</button>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookie-banner">
+    <p>Este site utiliza cookies para melhorar sua experiência.</p>
+    <button id="accept-cookies">Aceitar</button>
+</div>
+
+<script>
+(function() {
+    // ── COLUMN MAP ──
+    // 0:ID  1:Nome  2:DataLimite  3:Público  4:Local  5:Site  6:Observações
+    // 7:Descrição  8:Benefício  9:Realizador  10:Categoria  11:Destaque
+    const COL = { ID:0, NOME:1, DATA:2, PUBLICO:3, LOCAL:4, SITE:5, OBS:6, DESC:7, BENEFICIO:8, REALIZADOR:9, CATEGORIA:10, DESTAQUE:11 };
+
+    let allData = [];
+    let categories = new Set();
+
+    // ── FETCH DATA ──
+    function loadData() {
+        fetch('https://proxy-backend-production.up.railway.app/proxy-key')
+            .then(function(r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+            .then(function(data) {
+                if (!data.values || data.values.length < 2) return;
+                allData = data.values.slice(1).map(function(row) {
+                    return {
+                        id: (row[COL.ID] || '').trim(),
+                        nome: (row[COL.NOME] || '').trim(),
+                        data: (row[COL.DATA] || '').trim(),
+                        publico: (row[COL.PUBLICO] || '').trim(),
+                        local: (row[COL.LOCAL] || '').trim(),
+                        site: (row[COL.SITE] || '').trim(),
+                        obs: (row[COL.OBS] || '').trim(),
+                        descricao: (row[COL.DESC] || '').trim(),
+                        beneficio: (row[COL.BENEFICIO] || '').trim(),
+                        realizador: (row[COL.REALIZADOR] || '').trim(),
+                        categoria: (row[COL.CATEGORIA] || '').trim(),
+                        destaque: (row[COL.DESTAQUE] || '').trim().toLowerCase() === 'sim'
+                    };
+                });
+
+                allData.forEach(function(item) {
+                    if (item.categoria) categories.add(item.categoria);
+                });
+                buildCategoryTags();
+                document.getElementById('total-count').textContent = allData.length;
+                document.getElementById('loading').style.display = 'none';
+                renderAll();
+            })
+            .catch(function(err) {
+                console.error('Erro ao carregar dados:', err);
+                document.getElementById('loading').textContent = 'Erro ao carregar oportunidades. Tente novamente.';
+            });
+    }
+
+    // ── BUILD CATEGORY TAGS ──
+    function buildCategoryTags() {
+        const row = document.querySelector('.filters-row');
+        const sortControl = row.querySelector('.sort-control');
+        const sorted = Array.from(categories).sort((a, b) => a.localeCompare(b, 'pt-BR'));
+        sorted.forEach(cat => {
+            const btn = document.createElement('button');
+            btn.className = 'tag-filter';
+            btn.dataset.category = cat.toLowerCase();
+            btn.textContent = cat;
+            row.insertBefore(btn, sortControl);
+        });
+    }
+
+    // ── RENDER ──
+    function renderAll() {
+        const filtered = getFiltered();
+        renderFeatured(filtered);
+        renderCards(filtered);
+        updateCounter(filtered);
+    }
+
+    function getFiltered() {
+        const searchText = document.getElementById('search-input').value.toLowerCase();
+        const activeCategory = document.querySelector('.tag-filter.active')?.dataset.category || 'todos';
+        let items = allData.filter(item => {
+            const matchSearch = !searchText || 
+                [item.nome, item.descricao, item.publico, item.local, item.realizador, item.categoria, item.obs, item.beneficio]
+                    .join(' ').toLowerCase().includes(searchText);
+            const matchCategory = activeCategory === 'todos' || 
+                item.categoria.toLowerCase() === activeCategory;
+            return matchSearch && matchCategory;
+        });
+
+        // Sort
+        const sortVal = document.getElementById('sort-select').value;
+        items.sort((a, b) => {
+            if (sortVal === 'date-asc' || sortVal === 'date-desc') {
+                const dA = parseDate(a.data);
+                const dB = parseDate(b.data);
+                return sortVal === 'date-asc' ? dA - dB : dB - dA;
+            }
+            if (sortVal === 'name-asc') return a.nome.localeCompare(b.nome, 'pt-BR');
+            if (sortVal === 'name-desc') return b.nome.localeCompare(a.nome, 'pt-BR');
+            return 0;
+        });
+
+        return items;
+    }
+
+    function parseDate(str) {
+        if (!str) return new Date(9999, 11, 31);
+        const parts = str.split('/');
+        if (parts.length === 3) return new Date(parts[2], parts[1] - 1, parts[0]);
+        return new Date(str);
+    }
+
+    function renderFeatured(items) {
+        const featured = items.filter(i => i.destaque).slice(0, 4);
+        const section = document.getElementById('featured-section');
+        const grid = document.getElementById('featured-grid');
+        if (featured.length === 0) {
+            section.classList.remove('visible');
+            return;
+        }
+        section.classList.add('visible');
+        grid.innerHTML = featured.map(item => createCardHTML(item, true)).join('');
+        applyExternalLinkAttrs(grid);
+    }
+
+    function renderCards(items) {
+        const grid = document.getElementById('cards-grid');
+        const nonFeatured = items.filter(i => !i.destaque);
+        grid.innerHTML = nonFeatured.map(item => createCardHTML(item, false)).join('');
+        applyExternalLinkAttrs(grid);
+
+        const empty = document.getElementById('empty-state');
+        if (items.length === 0) {
+            empty.classList.add('visible');
+        } else {
+            empty.classList.remove('visible');
+        }
+    }
+
+    function createCardHTML(item, isFeatured) {
+        const cardClass = isFeatured ? 'card card-featured' : 'card';
+        const tagClass = isFeatured ? 'card-tag' : 'card-tag';
+        const url = item.site.startsWith('http') ? item.site : 'https://' + item.site;
+
+        let html = '<div class="' + cardClass + '">';
+        
+        // Top row: tag + date
+        html += '<div class="card-top">';
+        if (item.categoria) {
+            html += '<span class="' + tagClass + '">' + esc(item.categoria) + '</span>';
+        }
+        if (item.data) {
+            html += '<span class="card-date">' + esc(item.data) + '</span>';
+        }
+        html += '</div>';
+
+        // Title
+        html += '<h2 class="card-title">' + esc(item.nome) + '</h2>';
+
+        // Realizador
+        if (item.realizador) {
+            html += '<p class="card-realizador">' + esc(item.realizador) + '</p>';
+        }
+
+        // Description
+        if (item.descricao) {
+            html += '<p class="card-description">' + esc(item.descricao) + '</p>';
+        }
+
+        // Meta: público + local
+        if (item.publico || item.local) {
+            html += '<div class="card-meta">';
+            if (item.publico) {
+                html += '<div class="card-meta-item"><span class="card-meta-label">Para:</span> ' + esc(item.publico) + '</div>';
+            }
+            if (item.local) {
+                html += '<div class="card-meta-item"><span class="card-meta-label">Onde:</span> ' + esc(item.local) + '</div>';
+            }
+            html += '</div>';
+        }
+
+        // Benefit
+        if (item.beneficio) {
+            html += '<div class="card-benefit"><p class="card-benefit-label">O que oferece</p>' + esc(item.beneficio) + '</div>';
+        }
+
+        // Observations
+        if (item.obs) {
+            html += '<p class="card-description" style="font-size:0.8125rem;color:#6B7280;">' + esc(item.obs) + '</p>';
+        }
+
+        // CTA
+        if (item.site) {
+            html += '<div class="card-actions"><a href="' + esc(url) + '" target="_blank" class="btn-inscricao">Inscreva-se ↗</a></div>';
+        }
+
+        html += '</div>';
+        return html;
+    }
+
+    function esc(str) {
+        if (!str) return '';
+        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function applyExternalLinkAttrs(container) {
+        container.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.setAttribute('rel', 'noopener noreferrer nofollow');
+        });
+    }
+
+    function updateCounter(items) {
+        document.getElementById('visible-count').textContent = items.length;
+    }
+
+    // ── EVENT LISTENERS ──
+    document.getElementById('search-input').addEventListener('input', renderAll);
+    document.getElementById('sort-select').addEventListener('change', renderAll);
+
+    document.querySelector('.filters-row').addEventListener('click', function(e) {
+        if (!e.target.classList.contains('tag-filter')) return;
+        document.querySelectorAll('.tag-filter').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        renderAll();
+    });
+
+    // Back to top
+    window.addEventListener('scroll', function() {
+        var btn = document.getElementById('back-to-top');
+        btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+    });
+
+    // Cookie banner
+    (function() {
+        var banner = document.getElementById('cookie-banner');
+        if (localStorage.getItem('cookies-accepted') === 'true') {
+            banner.style.display = 'none';
+        }
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookies-accepted', 'true');
+            banner.style.display = 'none';
+        });
+    })();
+
+    // ── INIT ──
+    loadData();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Oportunidades de Impacto",
+  "url": "https://oportunidadesdeimpacto.com.br",
+  "description": "Diretório de editais, prêmios, aceleradoras e chamadas para projetos de impacto socioambiental no Brasil.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Neurônio - Ativação de Negócios e Causas",
+    "url": "https://www.neuronio.com.br"
+  }
+}
+</script>
+</body>
+</html>
